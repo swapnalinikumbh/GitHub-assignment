@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import SearchBar from './Components/SearchBar';
+import RepoCard from './Components/RepoCard';
 
-function App() {
+import './App.css';
+const App = () => {
+  const [repos, setRepos] = useState([]);
+
+  const handleSearch = (data) => {
+    setRepos(data);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <SearchBar onSearch={handleSearch} />
+      {repos.map((repo) => (
+        <RepoCard key={repo.id} repo={repo} />
+      ))}
     </div>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,30 @@
+/* Inside SortOptions.css */
+select {
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.select:hover {
+  border-color: #3498db;
+  /* Border color on hover */
+}
+
+.select:focus {
+  border-color: #3498db;
+  /* Border color on focus */
+  outline: none;
+  /* Remove default focus outline */
+}
+
+/* Styling the arrow icon (you might need to use a custom arrow image for cross-browser compatibility) */
+.select::after {
+  content: '▼';
+  /* Default arrow character */
+  font-size: 14px;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
