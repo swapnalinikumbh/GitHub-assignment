@@ -5,7 +5,7 @@ import SortOptions from './SortOptions';
 
 const SearchBar = ({ onSearch }) => {
   const [query, setQuery] = useState('');
-  const [setSortOption] = useState('');
+  const [sortOption, setSortOption] = useState('');
 
   const handleSearch = async () => {
     try {
